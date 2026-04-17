@@ -43,7 +43,7 @@ export const authConfig = {
     },
     authorized({ auth, request }) {
       const pathname = request.nextUrl.pathname;
-      const publicPaths = ['/login', '/api/auth', '/prototype'];
+      const publicPaths = ['/login', '/api/auth', '/api/admin/seed', '/prototype'];
       const isPublic = publicPaths.some((p) => pathname === p || pathname.startsWith(p + '/'));
       if (isPublic) return true;
       return !!auth;
